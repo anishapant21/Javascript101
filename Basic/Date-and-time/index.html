@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1> Display current Date and time</h1>
+    </head>
+    <body>
+        <div id="displayAll">
+            Today is: <p id="displayDay"> </p>  <br/>
+            Time <p  id="displayHour"></p> : 
+            <p  id="displayMin"></p> :
+            <p id="displaySec"></p> 
+            <p id="displaySuffix"></p>
+        </div>
+
+        <style>
+            p{
+                display: inline;
+            }
+        </style>
+
+
+        <script>
+            var suffix=0;
+            suffixElem=['AM', 'PM']
+            days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+            const fullDate = new Date();
+            const c = fullDate.getDay();
+
+            var hourTime=fullDate.getHours();
+            const minTime=fullDate.getMinutes();
+            const secTime=fullDate.getSeconds();
+
+            if (hourTime > 12) {
+                hourTime= hourTime- 12;
+                suffix = 1;
+
+            };
+            const time = [hourTime, ":", minTime];
+
+
+            //send data to html
+            document.getElementById("displayDay").innerHTML= days[c];
+            document.getElementById("displayHour").innerHTML=  hourTime;
+            document.getElementById("displayMin").innerHTML=  minTime;
+            document.getElementById("displaySec").innerHTML=  secTime;
+            document.getElementById("displaySuffix").innerHTML=  suffixElem[suffix];
+
+            //display on console
+            console.log("Today is:", days[c])
+            console.log("time", hourTime, ":", minTime, ":", secTime, suffixElem[suffix])
+            
+        
+        </script>
+
+    </body>
+</html>
