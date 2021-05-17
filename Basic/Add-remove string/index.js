@@ -31,3 +31,20 @@ if (stew3.length >=1){
     console.log(newstew);
 
 }
+
+//Write a JavaScript program to check whether a string "Script" presents at 5th (index 4) position in a given string, if "Script" presents in the string return the string without "Script" otherwise return the original one.
+
+let word= 'javascriptbaby';
+if (word.length>6){
+    newWord=word;
+    console.log(newWord.substring(10, 4))
+    console.log(word.substring(0, 4));
+    if (newWord.substring(10, 4) === 'script'){
+        
+        res_word= word.substring(0, 4) + word.substring(10,word.length);
+    }
+
+} 
+else {res_word = word};
+console.log(res_word);
+
