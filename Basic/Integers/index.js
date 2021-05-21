@@ -44,3 +44,33 @@ if (legen[1] === 'i' || legen[2] === 'i' || legen[3] === 'i'){
     console.log("I don't")
 }
 //terrible way to do this!!! I know right!!
+
+
+
+//Write a JavaScript program to check whether the last digit of the three given positive integers is same.
+
+let [a2, b2, c2] = [123, 1243, 12453];
+ 
+a3=a2.toString();
+b3=b2.toString();
+c3=c2.toString();
+
+if( a3[a3.length-1] === b3[b3.length-1] && b3[b3.length-1] === c3[c3.length-1]){
+    console.log("we are same")
+} else{
+    console.log("we are not same")
+}
+
+//Write a JavaScript program to create new string with first 3 characters are in lower case from a given string. If the string length is less than 3 convert all the characters in upper case.
+
+function goLower(data){
+    if (data.length <3){
+        return data.toUpperCase();
+    }
+    front = (data.substring(0, 3)).toLowerCase();
+    back = data.substring(3, data.length);
+    return front+back;
+};
+
+console.log(goLower("an"));
+console.log(goLower("WHOCARESDOYOU"))
